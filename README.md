@@ -20,6 +20,34 @@ O fluxograma abaixo ilustra o fluxo de execução do programa, desde a exibiçã
 
 ![Fluxograma - ArraySortPoly - Mermaid.png](Fluxograma%20-%20ArraySortPoly%20-%20Mermaid.png)
 
+**Código Mermaid**
+```
+graph TD
+A[Início] --> B[Exibir Menu]
+B --> C{Ler Opção}
+C --> |Não| N1[Fim]
+C --> |Sim| D{Opção = 1?}
+D --> |Não| N2
+N2 --> B
+D --> |Sim| E[Obter Valores do Arranjo]
+E --> F{Opção = 8?}
+F --> |Sim| G[Exibir Tipos de Arranjo]
+G --> H[Ler Tipo do Arranjo]
+H --> I[Exibir Ordem]
+I --> J[Ler Ordem]
+J --> K[Ler Elementos]
+K --> L[Criar Arranjo]
+L --> M{Arranjo Válido?}
+M --> |Não| N3
+N3 --> B
+M --> |Sim| O[Exibir Lista Original]
+O --> P[Classificar Arranjo]
+P --> Q[Exibir Lista Ordenada]
+Q --> N1
+F --> |Não| K
+```
+
+
 ### Explicação do fluxograma:
 
 **Início:** O programa inicia sua execução.  
@@ -55,6 +83,119 @@ Diagrama gerado pelo IntelliJ
 
 ![Diagrama de Classes - ArraySortPoly - Mermaid.png](Diagrama%20de%20Classes%20-%20ArraySortPoly%20-%20Mermaid.png)
 Diagrama gerado no Mermaid
+
+**Código Mermaid**
+```
+classDiagram
+class Arranjo {
+-int tamanho
+<<abstract>> void classificar(boolean decrescente)
++int getTamanho()
+<<abstract>> void inserir(int indice, T valor)
+<<abstract>> T getElemento(int indice)
+<<abstract>> void remover(int indice)
+<<abstract>> void listar()
+}
+
+    class ArranjoByte {
+        -byte[] elementos
+        +ArranjoByte(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Byte valor)
+        +Byte getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoChar {
+        -char[] elementos
+        +ArranjoChar(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Character valor)
+        +Character getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoDouble {
+        -double[] elementos
+        +ArranjoDouble(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Double valor)
+        +Double getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoFloat {
+        -float[] elementos
+        +ArranjoFloat(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Float valor)
+        +Float getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoInteiro {
+        -int[] elementos
+        +ArranjoInteiro(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Integer valor)
+        +Integer getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoLong {
+        -long[] elementos
+        +ArranjoLong(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Long valor)
+        +Long getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class ArranjoShort {
+        -short[] elementos
+        +ArranjoShort(int tamanho)
+        +void classificar(boolean decrescente)
+        +void inserir(int indice, Short valor)
+        +Short getElemento(int indice)
+        +void remover(int indice)
+        +void listar()
+    }
+
+    class Main {
+        +static void main(String[] args)
+        -static Arranjo<?> criarArranjo(TipoArranjo tipo, String elementosStr)
+    }
+
+    class TipoArranjo {
+        -int valor
+        +TipoArranjo(int valor)
+        +int getValor()
+        +static TipoArranjo fromValor(int valor)
+    }
+
+    class Ordem {
+        -int valor
+        +Ordem(int valor)
+        +int getValor()
+        +static Ordem fromValor(int valor)
+    }
+
+    Arranjo <|-- ArranjoByte
+    Arranjo <|-- ArranjoChar
+    Arranjo <|-- ArranjoDouble
+    Arranjo <|-- ArranjoFloat
+    Arranjo <|-- ArranjoInteiro
+    Arranjo <|-- ArranjoLong
+    Arranjo <|-- ArranjoShort
+    Main *-- TipoArranjo
+    Main *-- Ordem
+```
 
 Esse diagrama de classes representa um sistema de classificação de arrays em Java, onde uma classe abstrata `Arranjo` define a estrutura geral e métodos comuns para diferentes tipos de dados. 
 Subclasses como `ArranjoInteiro` e `ArranjoDouble` herdam dessa classe abstrata e implementam métodos específicos para classificar seus respectivos tipos de dados. 

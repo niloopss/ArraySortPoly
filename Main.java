@@ -1,8 +1,19 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Classe principal do sistema de classificação de arrays.
+ * Contém o método main que inicia a execução do programa e interage com o usuário.
+ *
+ * @author Nivea Lins
+ */
 public class Main {
 
+    /**
+     * Método principal que inicia a execução do programa.
+     * Exibe um menu interativo para o usuário criar e classificar arrays de diferentes tipos numéricos.
+     *
+     * @param args Argumentos da linha de comando (não utilizados neste programa).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Arranjo<?> arranjo = null;
@@ -128,6 +139,13 @@ public class Main {
         }
     }
 
+    /**
+     * Cria um arranjo do tipo especificado e preenche com os elementos fornecidos.
+     *
+     * @param tipo        O tipo de arranjo a ser criado (INTEIRO, DOUBLE, FLOAT, BYTE, SHORT, LONG ou CHAR).
+     * @param elementosStr Uma string contendo os elementos do arranjo separados por espaço.
+     * @return O arranjo criado e preenchido, ou null se o tipo de arranjo for inválido.
+     */
     private static Arranjo<?> criarArranjo(TipoArranjo tipo, String elementosStr) {
         String[] elementosArray = elementosStr.split(" ");
         int tamanho = elementosArray.length;

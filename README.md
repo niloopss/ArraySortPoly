@@ -42,10 +42,11 @@ O fluxograma abaixo ilustra o fluxo de execução do programa, desde a exibiçã
 * **Arranjo Válido?:** O programa verifica se o arranjo foi criado corretamente.  
 * **Sim:** O fluxo segue para a etapa "Exibir Lista Original".  
 * **Não:** O fluxo retorna para a etapa "Exibir Menu".  
-* **Exibir Lista Original:** O programa exibe os elementos do arranjo na ordem em que foram inseridos.    
-* **Classificar Arranjo:** O programa classifica os elementos do arranjo na ordem especificada pelo usuário (crescente ou decrescente).  
-* **Exibir Lista Ordenada:** O programa exibe os elementos do arranjo após a classificação.  
-* **O fluxo retorna para a etapa "Exibir Menu", permitindo que o usuário realize outras operações ou escolha sair do programa.**  
+
+**Exibir Lista Original:** O programa exibe os elementos do arranjo na ordem em que foram inseridos.    
+**Classificar Arranjo:** O programa classifica os elementos do arranjo na ordem especificada pelo usuário (crescente ou decrescente).  
+**Exibir Lista Ordenada:** O programa exibe os elementos do arranjo após a classificação.  
+**O fluxo retorna para a etapa "Exibir Menu", permitindo que o usuário realize outras operações ou escolha sair do programa.**  
 
 ## Diagrama de Classes
 
@@ -83,16 +84,4 @@ O polimorfismo permite que o mesmo método `classificar()` seja usado em diferen
 ![Resultado 6 - ArraySortPoly - IntelliJ.png](Resultado%206%20-%20ArraySortPoly%20-%20IntelliJ.png)
 ![Resultado 7 - ArraySortPoly - IntelliJ.png](Resultado%207%20-%20ArraySortPoly%20-%20IntelliJ.png)
 ![Resultado 8 - ArraySortPoly - IntelliJ.png](Resultado%208%20-%20ArraySortPoly%20-%20IntelliJ.png)
-
-
-
-
-
-
-
-
-
-
-
-
 
